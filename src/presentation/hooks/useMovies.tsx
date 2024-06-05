@@ -18,5 +18,5 @@ export const useMovies = () => {
     );
   };
 
-  return {};
+  return {isLoading, nowPlaying};
 };
