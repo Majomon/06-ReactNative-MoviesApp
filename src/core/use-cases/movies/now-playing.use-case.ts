@@ -8,7 +8,7 @@ export const moviesNowPlayingUseCase = async (
 ): Promise<Movie[]> => {
   try {
     const nowPlaying = await fetcher.get<NowPlayingResponse>('/now_playing');
-    // Para convertir lo que recibimos con las propiedades que queremos
+    // Para convertir lo que recibimos con las propiedades que
     return nowPlaying.results.map(result =>
       MovieMapper.fromMovieDBResultToEntity(result),
     );
