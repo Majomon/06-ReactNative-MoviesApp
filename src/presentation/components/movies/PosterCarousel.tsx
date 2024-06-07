@@ -10,7 +10,6 @@ interface Props {
 }
 
 export const PosterCarousel = ({movies, height = 440}: Props) => {
-
   return (
     <View style={{height: height}}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
