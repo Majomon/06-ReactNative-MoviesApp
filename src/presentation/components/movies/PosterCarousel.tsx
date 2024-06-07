@@ -10,7 +10,6 @@ interface Props {
 }
 
 export const PosterCarousel = ({movies, height = 440}: Props) => {
-  console.log(movies);
 
   return (
     <View style={{height: height}}>
