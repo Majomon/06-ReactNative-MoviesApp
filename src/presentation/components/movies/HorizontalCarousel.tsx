@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -17,6 +17,13 @@ interface Props {
 
 export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
   const isLoading = useRef(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      isLoading.current = false;
+    }, 200);
+  }, [movies]);
+
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     if (isLoading.current) {
       return;
@@ -55,7 +62,7 @@ export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
         renderItem={({item}) => (
           <MoviePoster movie={item} width={140} height={200} />
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item, index) => `${item.id} - ${index}`}
         horizontal
         showsHorizontalScrollIndicator={false}
         onScroll={event => onScroll(event)}
