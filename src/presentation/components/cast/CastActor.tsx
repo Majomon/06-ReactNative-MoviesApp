@@ -7,8 +7,6 @@ interface Props {
 }
 
 export const CastActor = ({actor}: Props) => {
-  console.log(actor.avatar);
-
   return (
     <View style={styles.container}>
       <Image
