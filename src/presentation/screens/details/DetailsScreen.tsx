@@ -1,6 +1,7 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
+import {FullScreenLoader} from '../../components/loaders/FullScreenLoader';
 import {MovieDetails} from '../../components/movie/MovieDetails';
 import {MovieHeader} from '../../components/movie/MovieHeader';
 import {useMovie} from '../../hooks/useMovie';
@@ -16,8 +17,9 @@ export const DetailsScreen = ({route}: Props) => {
   const {isLoading, movie, cast} = useMovie(movieId);
 
   if (isLoading) {
-    return <Text>Loading</Text>;
+    return <FullScreenLoader />;
   }
+
   return (
     <ScrollView>
       {/* Header */}
