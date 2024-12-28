@@ -1,4 +1,4 @@
-package com.moviesapp
+package com.mauridev.infopeli
 
 import android.os.Bundle;
 
